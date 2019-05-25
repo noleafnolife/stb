@@ -62,14 +62,10 @@ void dummy_write(void *context, void *data, int len)
    memcpy(dummy, data, len);
 }
 
-extern void image_write_test(void);
-
 int main(int argc, char **argv)
 {
    int w,h;
    //test_ycbcr();
-
-   image_write_test();
 
    #if 0
    // test hdr asserts
@@ -113,7 +109,7 @@ int main(int argc, char **argv)
             printf("FAILED 4\n");
       }
    } else {
-      int i;
+      int i, nope=0;
       #ifdef PNGSUITE_PRIMARY
       char **files = stb_readdir_files("pngsuite/primary");
       #else

@@ -1,4 +1,3 @@
-#define _CRT_SECURE_NO_WARNINGS
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -57,11 +56,8 @@ void stbir_progress(float p)
 	STBIR_ASSERT(p >= 0 && p <= 1);
 }
 
-#ifdef __clang__
-#define STBIRDEF static inline
-#endif
-
 #define STBIR_PROGRESS_REPORT stbir_progress
+
 #define STB_IMAGE_RESIZE_IMPLEMENTATION
 #define STB_IMAGE_RESIZE_STATIC
 #include "stb_image_resize.h"
@@ -131,7 +127,7 @@ inline float mtfrand()
 	return (float)(mtrand() % ninenine)/ninenine;
 }
 
-void resizer(int argc, char **argv)
+static void resizer(int argc, char **argv)
 {
 	unsigned char* input_pixels;
 	unsigned char* output_pixels;
@@ -148,7 +144,7 @@ void resizer(int argc, char **argv)
 	exit(0);
 }
 
-void performance(int argc, char **argv)
+static void performance(int argc, char **argv)
 {
 	unsigned char* input_pixels;
 	unsigned char* output_pixels;

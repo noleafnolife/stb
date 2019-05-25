@@ -88,10 +88,6 @@ SOURCE=.\image_test.c
 # End Source File
 # Begin Source File
 
-SOURCE=.\image_write_test.c
-# End Source File
-# Begin Source File
-
 SOURCE=..\stb_image.h
 # End Source File
 # Begin Source File
